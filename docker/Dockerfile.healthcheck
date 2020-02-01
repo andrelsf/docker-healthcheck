@@ -1,0 +1,6 @@
+FROM    nginx:1.17.7
+
+RUN     apt update \
+        && apt install -y wget
+
+HEALTHCHECK CMD wget -q --method=HEAD localhost/system-status.txt
